@@ -1,8 +1,5 @@
 package com.example.pokemonapp.ui
 
-import android.content.Intent
-import android.net.Uri
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +7,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pokemonapp.R
 import com.example.pokemonapp.model.Pokemon
-import com.example.pokemonapp.model.ResultPokemon
 
 class PokemonViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val text1: TextView = view.findViewById(R.id.text1)

@@ -1,7 +1,6 @@
 package com.example.pokemonapp.ui
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
@@ -9,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pokemonapp.Injection
 import com.example.pokemonapp.R
+import com.example.pokemonapp.ui.loadstate.ReposLoadStateAdapter
 import com.example.pokemonapp.viewmodel.PokemonViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.collect
@@ -43,7 +43,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun initAdapter(){
-        list!!.adapter = adapter
+        list!!.adapter = adapter.withLoadStateHeaderAndFooter(
+            header = ReposLoadStateAdapter { adapter.retry() },
+            footer = ReposLoadStateAdapter { adapter.retry() }
+        )
         list!!.layoutManager = LinearLayoutManager(this)
 
     }
