@@ -5,7 +5,7 @@ import androidx.paging.LoadState
 import androidx.paging.LoadStateAdapter
 import com.example.pokemonapp.ui.loadstate.PokemonLoadStateViewHolder
 
-class ReposLoadStateAdapter(private val retry: () -> Unit) : LoadStateAdapter<PokemonLoadStateViewHolder>() {
+class PokemonLoadStateAdapter(private val retry: () -> Unit) : LoadStateAdapter<PokemonLoadStateViewHolder>() {
     override fun onBindViewHolder(holder: PokemonLoadStateViewHolder, loadState: LoadState) {
         holder.bind(loadState)
     }
